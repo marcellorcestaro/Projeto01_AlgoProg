@@ -5,7 +5,7 @@ Projeto 01 da disciplina de Algoritmos e Programação, na Universidade Presbite
 - Integrantes do grupo: 
     - Marcello Rentroia Cestaro - TIA 41919297
     - Francielly Ortiz - TIA XXXXXXXX
-    - João Victor - TIA XXXXXXXX
+    - João Victor Morais Rodrigues - TIA 41990870
 
 ## Tecnologia Utilizada
 
