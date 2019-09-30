@@ -1,9 +1,0 @@
-O desespero então, chegou. E de uma só vez. Todos os questionamentos do que fazer e para onde ir pareciam retirar o pouco de ar que ainda restava ali. Mesmo porque, além de todo o desconforto de se estar totalmente perdido num labirinto, havia em suas costas o peso de ter perdido dois de seus mais próximos amigos, os quais só estavam nessa situação por sua causa. Era seu dever, então, encontrá-los vivos e tirá-los dali.
-
-Sua primeira decisão chegou. Você pode caminhar à direita, à esquerda ou para frente. 
-
-Faça sua escolha:
-
-    a. Direita
-    b. Esquerda
-    c. Frente
