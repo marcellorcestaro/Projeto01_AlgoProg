@@ -30,6 +30,8 @@ def primeiraDecisao():
             print("\nA porta se abre. Você corre para fora da sala, com o coração disparado. O primeiro desafio serviu para mostrar que sair vivo deste labirinto seria uma missão extremamente difícil. Novamente, você se encontra na mesma situação anterior. Com três escolhas de direções a seguir. A porta por onde saiu se fechou instantaneamente atrás de você, impedindo que retorne.")
             score += 0.5
             segundaDecisao()
+        elif resposta == "ESC":
+            quitMenu(1)
         else:
             print("\nAs luzes se apagam no momento que diz a resposta em voz alta. O que aconteceu? Você então tenta tatear por alguma saída, uma vez que os olhos repentinamente abandonaram uma realidade luminosa. Simplesmente nada. A respiração antes mais controlada pelo foco de responder corretamente a pergunta, voltava a descompassar, embargada por um desespero que faz com que arregale os olhos. \nUm barulho então se inicia, facilmente reconhecido como o escape de um gás. Essa substância, até então desconhecida, trouxe uma sensação de queimação por todos os órgãos do seu corpo após a primeira inalada e uma voz, vinda de dentro da sala, disse antes que você perdesse o equilíbrio das pernas e caísse no chão:\n“Infelizmente o seu destino será tão trágico quanto o do pobre bichano. Oh, Schrödinger, por quê fez isso com este pobre ser humano?”")
             fimDoJogo()
@@ -63,6 +65,13 @@ def segundaDecisao():
         fimDoJogo()
 
     elif escolha == "c":
+        if isAscii == True: 
+            print("\n")
+            print("              _..----.._    _")
+            print("            .'  .--.    ''-.(0)_")
+            print("'-.__.-'''=:|   ,  _)_ \__ . c\\'-..")
+            print("             '''------'---''---'-''")
+            print("\n")
         print("\nAo adentrar a nova sala, as passagens de acesso entre o ambiente anterior e o próximo, se fecham. Desta vez a luz está acesa, então facilmente é possível analisar o ambiente e sentir o pavor provocado pelo item localizado ali: Uma maca, próxima de um dispositivo cuja finalidade não é possível distinguir. Há um bilhete na parede que diz:")
         print("“Quando o calor é intenso, tudo que procuramos é um local para nos esconder dele.”")
         print("\nAbaixo deste bilhete, um outro papel estava em cima de uma pequena mesa localizada ali, com dizeres que se assemelhavam à um manual de instruções:")
@@ -76,7 +85,8 @@ def segundaDecisao():
             print("\nTão logo a resposta é dada, o dispositivo é retirado do seu corpo e as amarras são soltas, permitindo que levante e possa prosseguir com o seu caminho. ")
             score += 0.5
             terceiraDecisao()
-
+        elif resposta == "ESC":
+            quitMenu(2)
         else:
             print("\nA resposta é dada. As unhas dos ratos já estão com intensidade contra sua pele, provocando sérios arranhões. O calor então, é aumentado, provocando uma movimentação intensa e capaz de ser sentida. Lágrimas de agonia retratam um fim inevitável e doloroso. ")
             fimDoJogo()
@@ -120,6 +130,8 @@ def terceiraDecisao():
             print("\nApós respondida a pergunta, um dispositivo é acionado, inundando todo o ambiente com uma artificial chuva, cessando o fogo aos poucos. Em poucos instantes, o local já está contido, permitindo que consiga prosseguir com o caminho.")
             score += 0.5
             quartaDecisao()
+        elif resposta == "ESC":
+            quitMenu(3)
         else: 
             print("\nA força do fogo é intensificada consumindo o ambiente por inteiro e inevitavelmente alastrando-se pelo seu corpo. Os gritos de dor aos poucos se enfraquecem e silenciam, substituídos pelo estalar da brasa contínua.")
             fimDoJogo()
@@ -164,6 +176,8 @@ def quartaDecisao():
             print("\nVocê consegue rastejar com extrema dificuldade até o outro lado do cômodo, desviando da aranha. Cerca de 40 minutos após o corpo estar totalmente paralisado, os movimentos começam a retornar lentamente.")
             score += 0.5
             quintaDecisao()
+        elif resposta == "ESC":
+            quitMenu(4)
         else: 
             print("\nA substância parece contrair todos os seus tendões musculares, tornando cada vez mais impossível realizar qualquer movimento. Apesar da consciência lúcida e mente funcionando em perfeito estado, nada mais restava além de aguardar a aranha se aproximar. ")
             print("Ela então, sobe em um dos seus dedos, caminhando em direção à sua mão. Num dos poucos e limitados reflexos que lhe sobrou, um espasmo faz com que sua mão se mova, sendo imediatamente apanhada pela aranha.")
