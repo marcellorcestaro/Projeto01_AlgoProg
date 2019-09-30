@@ -2,6 +2,8 @@
 
 score = 0
 
+isAscii = int(input("\nGostaria de habilitar as artes em ASCII?\n(1) Sim\n(0) Não\nR: "))
+
 def primeiraDecisao():
     global score
 
@@ -36,6 +38,9 @@ def primeiraDecisao():
         print("\nA porta se abre. Você corre para fora da sala, com o coração disparado. O primeiro desafio serviu para mostrar que sair vivo deste labirinto seria uma missão extremamente difícil. Novamente, você se encontra na mesma situação anterior. Com três escolhas de direções a seguir. A porta por onde saiu se fechou instantaneamente atrás de você, impedindo que retorne.")
         score += 1.0
         segundaDecisao()
+
+    elif escolha == "ESC":
+        quitMenu(2)
 
     else: 
         print("\n[!] Opção inválida! Por favor, tente novamente.")
@@ -76,6 +81,9 @@ def segundaDecisao():
             print("\nA resposta é dada. As unhas dos ratos já estão com intensidade contra sua pele, provocando sérios arranhões. O calor então, é aumentado, provocando uma movimentação intensa e capaz de ser sentida. Lágrimas de agonia retratam um fim inevitável e doloroso. ")
             fimDoJogo()
 
+    elif escolha == "ESC":
+        quitMenu(2)
+
     else:
         print("\n[!] Opção inválida! Por favor, tente novamente.")
         segundaDecisao()
@@ -83,19 +91,20 @@ def segundaDecisao():
 def terceiraDecisao():
     global score
 
-    print(3*"            __________            ")
-    print(3*"           |  __  __  |           ")
-    print(3*"           | |  ||  | |           ")
-    print(3*"           | |  ||  | |           ") 
-    print(3*"           | |__||__| |           ") 
-    print(3*"           |  __  __()|           ") 
-    print(3*"           | |  ||  | |           ") 
-    print(3*"           | |  ||  | |           ") 
-    print(3*"           | |  ||  | |           ") 
-    print(3*"           | |  ||  | |           ")
-    print(3*"           | |__||__| |           ") 
-    print(3*"           |__________|           ")
-    print("\n")
+    if isAscii == 1:
+        print(3*"            __________            ")
+        print(3*"           |  __  __  |           ")
+        print(3*"           | |  ||  | |           ")
+        print(3*"           | |  ||  | |           ") 
+        print(3*"           | |__||__| |           ") 
+        print(3*"           |  __  __()|           ") 
+        print(3*"           | |  ||  | |           ") 
+        print(3*"           | |  ||  | |           ") 
+        print(3*"           | |  ||  | |           ") 
+        print(3*"           | |  ||  | |           ")
+        print(3*"           | |__||__| |           ") 
+        print(3*"           |__________|           ")
+        print("\n")
     print("Após alguns segundos de descanso, há uma nova motivação para prosseguir. Afinal, seus amigos continuam desaparecidos.") 
     print("Ao continuar o caminho, desta vez a situação se desdobra de outra maneira. Diferentemente da vez anterior, desta vez existem três portas. Há a necessidade de escolher uma.")
 
@@ -123,6 +132,9 @@ def terceiraDecisao():
         print("\nVocê abre a porta cuidadosamente, torcendo com todas as forças para ter feito uma boa escolha. E fez. Ao entrar no pequeno recinto, há um bilhete na parede: “Parabéns pela sábia escolha. Nenhum animal seria capaz de viver sem se alimentar por um ano. Boa sorte em sua jornada.")
         score += 1.0
         quartaDecisao()
+
+    elif escolha == "ESC":
+        quitMenu(3)
 
     else:
         print("\n[!] Opção inválida! Por favor, tente novamente.")
@@ -172,6 +184,9 @@ def quartaDecisao():
         score += 1.0
         quintaDecisao()
 
+    elif escolha == "ESC":
+        quitMenu(4)
+
     else:
         print("\n[!] Opção inválida! Por favor, tente novamente.")
         quartaDecisao()
@@ -183,42 +198,70 @@ def quintaDecisao():
 
 
 def fimDoJogo():
+    if isAscii == 1:
+        print("\n")
+        print("     .... NO! ...                  ... MNO! ...")
+        print("   ..... MNO!! ...................... MNNOO! ...")
+        print(" ..... MMNO! ......................... MNNOO!! .")
+        print(".... MNOONNOO!   MMMMMMMMMMPPPOII!   MNNO!!!! .")
+        print(" ... !O! NNO! MMMMMMMMMMMMMPPPOOOII!! NO! ....")
+        print("    ...... ! MMMMMMMMMMMMMPPPPOOOOIII! ! ...")
+        print("   ........ MMMMMMMMMMMMPPPPPOOOOOOII!! .....")
+        print("   ........ MMMMMOOOOOOPPPPPPPPOOOOMII! ... ") 
+        print("    ....... MMMMM..    OPPMMP    .,OMI! ....")
+        print("     ...... MMMM::   o.,OPMP,.o   ::I!! ...")
+        print("         .... NNM:::.,,OOPM!P,.::::!! ....")
+        print("          .. MMNNNNNOOOOPMO!!IIPPO!!O! .....")
+        print("         ... MMMMMNNNNOO:!!:!!IPPPPOO! ....")
+        print("           .. MMMMMNNOOMMNNIIIPPPOO!! ......")
+        print("          ...... MMMONNMMNNNIIIOO!..........")
+        print("       ....... MN MOMMMNNNIIIIIO! OO ..........")
+        print("    ......... MNO! IiiiiiiiiiiiI OOOO ...........")
+        print("  ...... NNN.MNO! . O!!!!!!!!!O . OONO NO! ........")
+        print("   .... MNNNNNO! ...OOOOOOOOOOO .  MMNNON!........")
+        print("   ...... MNNNNO! .. PPPPPPPPP .. MMNON!........")
+        print("      ...... OO! ................. ON! .......")
+        print("         ................................")
+        print("\n")
+
+    percent_score = (score/5) * 100
+    if percent_score == 100:
+        print("\nVOCÊ MORREU!\nO SEU SCORE FOI DE {}%. PARABÉNS, VOCÊ OBTEVE UM SCORE PERFEITO!".format(percent_score))
+    elif percent_score >= 75 and percent_score < 100:
+        print("\nVOCÊ MORREU!\nO SEU SCORE FOI DE {}%. VOCÊ TEVE UM ÓTIMO SCORE, MAS AINDA HÁ MUITO O QUE APRENDER".format(percent_score))
+    elif percent_score >= 50 and percent_score < 75:
+        print("\nVOCÊ MORREU!\nO SEU SCORE FOI DE {}%. TEM MUITO O QUE APRENDER AINDA...".format(percent_score))
+    else:
+        print("\nVOCÊ MORREU!\nO SEU SCORE FOI DE {}%. FRACASSO!".format(percent_score))
+
+def quitMenu(state):
+    choice = input("\nVocê gostaria de salvar o seu progresso?\n(1) Sim\n(0) Não\nR: ") 
+    if choice == "1":
+        save(state)
+        print("\nSalvo com sucesso! Encerrando o programa...")
+    else: 
+       quit() 
+
+def save(state):
+    with open("save.dat", "w+") as f:
+        f.write(str(state))
+
+
+
+if isAscii == 1:
+    print("\n __          ___      .______    __  .______      __  .__   __. .___________. ______      .___  ___.   ______   .______     .___________.    ___       __")  
+    print("|  |        /   \     |   _  \  |  | |   _  \    |  | |  \ |  | |           |/  __  \     |   \/   |  /  __  \  |   _  \    |           |   /   \     |  |")
+    print("|  |       /  ^  \    |  |_)  | |  | |  |_)  |   |  | |   \|  | `---|  |----|  |  |  |    |  \  /  | |  |  |  | |  |_)  |   `---|  |----`  /  ^  \    |  |") 
+    print("|  |      /  /_\  \   |   _  <  |  | |      /    |  | |  . `  |     |  |    |  |  |  |    |  |\/|  | |  |  |  | |      /        |  |      /  /_\  \   |  |") 
+    print("|  `----./  _____  \  |  |_)  | |  | |  |\  \----|  | |  |\   |     |  |    |  `--'  |    |  |  |  | |  `--'  | |  |\  \----.   |  |     /  _____  \  |  `----.")
+    print("|_______/__/     \__\ |______/  |__| | _| `._____|__| |__| \__|     |__|     \______/     |__|  |__|  \______/  | _| `._____|   |__|    /__/     \__\ |_______|")
     print("\n")
-    print("     .... NO! ...                  ... MNO! ...")
-    print("   ..... MNO!! ...................... MNNOO! ...")
-    print(" ..... MMNO! ......................... MNNOO!! .")
-    print(".... MNOONNOO!   MMMMMMMMMMPPPOII!   MNNO!!!! .")
-    print(" ... !O! NNO! MMMMMMMMMMMMMPPPOOOII!! NO! ....")
-    print("    ...... ! MMMMMMMMMMMMMPPPPOOOOIII! ! ...")
-    print("   ........ MMMMMMMMMMMMPPPPPOOOOOOII!! .....")
-    print("   ........ MMMMMOOOOOOPPPPPPPPOOOOMII! ... ") 
-    print("    ....... MMMMM..    OPPMMP    .,OMI! ....")
-    print("     ...... MMMM::   o.,OPMP,.o   ::I!! ...")
-    print("         .... NNM:::.,,OOPM!P,.::::!! ....")
-    print("          .. MMNNNNNOOOOPMO!!IIPPO!!O! .....")
-    print("         ... MMMMMNNNNOO:!!:!!IPPPPOO! ....")
-    print("           .. MMMMMNNOOMMNNIIIPPPOO!! ......")
-    print("          ...... MMMONNMMNNNIIIOO!..........")
-    print("       ....... MN MOMMMNNNIIIIIO! OO ..........")
-    print("    ......... MNO! IiiiiiiiiiiiI OOOO ...........")
-    print("  ...... NNN.MNO! . O!!!!!!!!!O . OONO NO! ........")
-    print("   .... MNNNNNO! ...OOOOOOOOOOO .  MMNNON!........")
-    print("   ...... MNNNNO! .. PPPPPPPPP .. MMNON!........")
-    print("      ...... OO! ................. ON! .......")
-    print("         ................................")
-    print("\n")
+else: 
+    print("\nLabirinto Mortal")
 
-    print("\nVOCÊ MORREU!\nO SEU SCORE FOI DE:", score)
+print("\nAutores: \n\tFrancielly Ortiz - TIA 41991788\n\tJoão Victor - TIA 41990870\n\tMarcello Cestaro - TIA 41919297")
 
-print("\n __          ___      .______    __  .______      __  .__   __. .___________. ______      .___  ___.   ______   .______     .___________.    ___       __")  
-print("|  |        /   \     |   _  \  |  | |   _  \    |  | |  \ |  | |           |/  __  \     |   \/   |  /  __  \  |   _  \    |           |   /   \     |  |")
-print("|  |       /  ^  \    |  |_)  | |  | |  |_)  |   |  | |   \|  | `---|  |----|  |  |  |    |  \  /  | |  |  |  | |  |_)  |   `---|  |----`  /  ^  \    |  |") 
-print("|  |      /  /_\  \   |   _  <  |  | |      /    |  | |  . `  |     |  |    |  |  |  |    |  |\/|  | |  |  |  | |      /        |  |      /  /_\  \   |  |") 
-print("|  `----./  _____  \  |  |_)  | |  | |  |\  \----|  | |  |\   |     |  |    |  `--'  |    |  |  |  | |  `--'  | |  |\  \----.   |  |     /  _____  \  |  `----.")
-print("|_______/__/     \__\ |______/  |__| | _| `._____|__| |__| \__|     |__|     \______/     |__|  |__|  \______/  | _| `._____|   |__|    /__/     \__\ |_______|")
-print("\n")
-
-print("Instruções para jogar:")
+print("\nInstruções para jogar:")
 print("\t- Neste jogo, tem dois tipos de escolhas: de multipla escolha e dissertativa")
 print("\t- Responda todas as perguntas somente com PALAVRAS ou LETRAS sem letras maiúsculas")
 print("\t\t Exemplo: ")
@@ -229,18 +272,45 @@ print("\t\t\t R: a")
 print("\t\t Exemplo 2: ")
 print("\t\t\t Qual vai ser a nota deste trabalho?")
 print("\t\t\t R: 10")
-print("\t- As suas escolhas serão avaliadas e colocadas em um SCORE final para avaliar o seu desempenho. O score máximo é 5.")
-print("\t- Para que as artes em ASCII funcionem da melhor forma, é recomendável que o programa esteja rodando em tela cheia.")
+print("\t- As suas escolhas serão avaliadas e colocadas em um SCORE final para avaliar o seu desempenho. O score máximo é 100%.")
+print("\t- Para que as artes em ASCII funcionem da melhor forma, é recomendado que o programa esteja rodando em tela cheia.")
+print("\t- Em qualquer momento você pode escrever ESC (em letras maiúsculas) para ir no menu de salvar e sair")
 
 print("\nBoa sorte com as suas escolhas!")
 
-pronto = input("\nVocê está pronto para encarar os desafios?\n(1) Sim! \n(2) Não, preciso ainda de um tempo para pensar.\nR: ")
-while pronto != "1":  
-    pronto = input("\nVocê está pronto para encarar os desafios?\n(1) Sim! \n(2) Não, preciso ainda de um tempo para pensar.\nR: ")
 
-print("\n")
-print(70*"~*~*")
-print("Você abre os olhos. Sua cabeça está confusa e as ideias estão deturpadas. O ambiente ao redor roda incessantemente, dando-lhe a impressão de estar num carrossel. O que aconteceu? Para onde foram George e Mary? \nAos poucos você vai reconhecendo a situação que até então era digna de livros e filmes. Cercado por paredes,  você conclui: está num labirinto. O maior desafio? Sair dele com vida.")
+try:
+    save_file = open("save.dat", "r")
+    pronto = input("\nDetectamos um arquivo salvo no seu computador. Você gostaria de continuar a sua aventura de onde parou?\n(1) Sim\n(0) Não\nR: ")
+    isSaved = True
+except: 
+    pronto = "0"
 
-primeiraDecisao()
+if pronto == "1" and isSaved == True:
+    stage = save_file.readline()
+    if stage == "1":
+        primeiraDecisao()
+    elif stage == "2":
+        segundaDecisao()
+    elif stage == "3":
+        terceiraDecisao()
+    elif stage == "4":
+        quartaDecisao()
+    elif stage == "5":
+        quintaDecisao()
+    else: 
+        print("Arquivo de save corrompido! Iniciando novo jogo...")
+        primeiraDecisao()
+else:
+    pronto = input("\nVocê está pronto(a) para encarar os desafios?\n(1) Sim! (Novo jogo) \n(2) Não, preciso ainda de um tempo para pensar.\n(3) Sair do programa\nR: ")
+    while pronto != "1":  
+        if(pronto == "3"):
+            quit()
+        pronto = input("\nVocê está pronto para encarar os desafios?\n(1) Sim! \n(2) Não, preciso ainda de um tempo para pensar.\nR: ")
+
+    print("\n")
+    print(70*"~*~*")
+    print("Você abre os olhos. Sua cabeça está confusa e as ideias estão deturpadas. O ambiente ao redor roda incessantemente, dando-lhe a impressão de estar num carrossel. O que aconteceu? Para onde foram George e Mary? \nAos poucos você vai reconhecendo a situação que até então era digna de livros e filmes. Cercado por paredes,  você conclui: está num labirinto. O maior desafio? Sair dele com vida.")
+
+    primeiraDecisao()
 
