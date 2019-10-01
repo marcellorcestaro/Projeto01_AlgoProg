@@ -208,7 +208,29 @@ def quartaDecisao():
 
 
 def quintaDecisao():
-    print("Quinta decisão!")
+    print("A escada levou até uma grande região central, iluminada e cinza, diferente dos ambientes obscuros visitados anteriormente. Um grande painel repleto de botões fazia parte do local que lembrava uma sala de controle. Próximo do teto, havia um painel com um relógio em contagem regressiva. Um total de 3 minutos era tudo que restava.")
+    print("Havia uma tela em sua frente que repentinamente apresentou uma pessoa mascarada, que dizia com a voz transformada por meio de efeitos:")
+    print("“Devo dizer que subestimei sua capacidade em chegar até aqui. Porque simplesmente achei que não fosse ser capaz de passar da primeira sala. Gosto quando meus participantes se superam. Pois bem. Alcançamos o auge da pontuação de audiência do dia, espero que fique feliz com essa informação.” ")
+    print("A tela ao lado então, ligou, mostrando Mary e George dentro de cômodos, com olhares de desespero e preocupação.")
+    print("A voz então continuou:\n“Bem vindo ao Hunner. Espero que consiga sair vivo para acompanhar as próximas temporadas desse programa. Vamos à etapa final. Tudo que tem que fazer é escolher um botão dentre os três abaixo e apertar. Ah, devo dizer que seus dois amigos possuem um dispositivo no corpo que pode explodi-los dependendo do botão que escolher.”")
+    escolha = input("1 - botão verde\n2 - botão roxo\n3 - botão amarelo")
+    if escolha == "1":
+        print("Enquanto apertava o botão, sabia que o poder daquela decisão poderia salvar ou custar alguma vida, Você fechou os olhos esperando pelo pior mas uma porta se abriu em sua frente, de onde Mary e George saíram de lá, aliviados por estarem vivos. A voz então, ressurgiu com a seguinte mensagem:\n“Meus parabéns! São poucas as vezes que temos finais felizes por aqui. Nossa equipe estará entrando em contato para oferecer suporte à vocês. Após isso, serão encaminhados para serem entrevistados”.\nA indignação por serem submetidos à condições mortais por entretenimento estava misturada com o alívio de poder estar junto das pessoas pelas quais se preocupou durante todo o percurso. ")
+        score += 1.0
+        fimDoJogo()
+    elif escolha == "2":
+        print("Enquanto apertava o botão, sabia que o poder daquela decisão poderia salvar ou custar alguma vida. Após pressionado, a câmera que focava Mary e George, televisionou em tempo real e ao vivo a morte de George e Mary, cujos corpos instantaneamente explodiram pelo dispositivo acionado por meio do botão roxo. O espanto, horror e desespero tomaram conta do seu corpo. \nA voz então, ressurgiu com a seguinte mensagem:\n“Poxa vida, sinto muito pela sua perda. Nossa equipe estará entrando em contato para oferecer suporte à você. Após isso, será encaminhado para ser entrevistado.”\nSeu corpo foi ao chão. As lágrimas escorriam pelo seu rosto sem que  tivesse total controle da situação. Não havia mais nada que poderia ser feito. Seus melhores amigos haviam morrido em prol do entretenimento popular. Esse pensamento consumia todos os pedaços de si.")
+        fimDoJogo()
+    elif escolha == "3":
+        print("Enquanto apertava o botão, sabia que o poder daquela decisão poderia salvar ou custar alguma vida. Após pressionado, a câmera que focava Mary e George, televisionou em tempo real e ao vivo a morte de George, cujo corpo instantaneamente explodiu pelo dispositivo acionado por meio do botão amarelo. O espanto, horror e desespero tomaram conta do seu corpo. \nA porta do local onde se encontrava Mary abriu, libertando-a de vez.\nA voz então, ressurgiu com a seguinte mensagem:\n“Poxa vida, sinto muito pela sua perda. Nossa equipe estará entrando em contato para oferecer suporte à vocês. Após isso, serão encaminhados para serem entrevistados.”")
+        score += 0.5
+        fimDoJogo()
+    elif escolha == "ESC":
+        quitMenu(5)
+
+    else:
+        print("\n[!] Opção inválida! Por favor, tente novamente.")
+        quintaDecisao()
 
 
 def fimDoJogo():
